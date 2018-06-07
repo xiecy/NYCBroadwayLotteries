@@ -27,23 +27,41 @@ function run() {
 	enterBulkLotteries();
 }
 
-function enterDirectLotteries() {
+/*
+ * Opens each url in urls in a new window and return all the opened window objects.
+ *
+ * @param urls An array of URLs as strings.
+ */
+function openPages(urls) {
 	let opened = [];
-	for (const url of directEnter) {
+	for (const url of urls) {
 		// Open the URL in a new tab/window and push the opened window object into the array
 		opened.push(window.open(url, "_blank"));
 	}
+  return opened;
+}
+
+function appendScript(opened, script) {
 	for (const win of opened) {
-		win.document.create
+		const scriptEl = win.document.createElement("script");
+    scriptEl.src = script;
+    win.document.head.appendChild(scriptEl);
 	}
 }
 
-function enterSocialLotteries() {
+function enterDirectLotteries() {
+  const opened = openPages(directEnter);
+  appendScript(opened, "./directLottery.js");
+}
 
+function enterSocialLotteries() {
+  const opened = openPages(socialEnter);
+  appendScript(opened, "./socialLottery.js");
 }
 
 function enterBulkLotteries() {
-
+  const opened = openPages(bulkEnter);
+  appendScript(opened, "./bulkLottery.js");
 }
 
 run();
