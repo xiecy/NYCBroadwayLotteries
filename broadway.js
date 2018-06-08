@@ -16,14 +16,14 @@ const socialEnter = [
 const bulkEnter = [
 		"http://www.luckyseat.com/book-of-mormon/", // The Book of Mormon
 		"https://www.luckyseat.com/hamilton-ny/", // Hamilton
-		// "http://lottery.kinkybootsthemusical.com/", // Kinky Boots
+		"https://www.luckyseat.com/kinky-boots/", // Kinky Boots
 		"https://www.luckyseat.com/mean-girls/", // Mean Girls
 		"http://www.luckyseat.com/springsteen-broadway/" // Springsteen on Broadway
 	];
 
 function run() {
-	// enterDirectLotteries();
-	// enterSocialLotteries();
+	enterDirectLotteries();
+	enterSocialLotteries();
 	enterBulkLotteries();
 }
 
