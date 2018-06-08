@@ -1,5 +1,5 @@
-// this is the code which will be injected into a given page...
-// Chrom extension code skeleton from https://gist.github.com/danharper/8364399
+// this function injects code into the open webpage
+// Chrome extension template from https://gist.github.com/danharper/8364399
 
 (function() {
 
